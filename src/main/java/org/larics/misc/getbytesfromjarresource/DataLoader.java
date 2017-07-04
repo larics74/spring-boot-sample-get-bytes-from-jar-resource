@@ -11,6 +11,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.util.StreamUtils;
 
 @Component
@@ -48,7 +49,7 @@ public class DataLoader {
 						+ "/" + "1.jpg");
 		System.out.println("InputStream input = " + input);
 
-		byte[] bytes = StreamUtils.copyToByteArray(input);
+		byte[] bytes = FileCopyUtils.copyToByteArray(input);
 		System.out.println("Data loaded! " + bytes.length);
 	}
 }
